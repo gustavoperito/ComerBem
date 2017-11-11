@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>{{titulo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="https://mcdonalds.by/assets/mcdonalds/images/mc-logo-large-green.png">
+      </ion-avatar>
+      <h2>{{titulo}}</h2>
+      <p><ion-icon name="pin"></ion-icon> Av. Centenario</p>
+    </ion-item>
+    <ion-card-content>
+      <div padding>
+        <ion-segment [(ngModel)]="tabsRestaurante" color="danger">
+          <ion-segment-button value="cardapio">
+            Cardapio
+          </ion-segment-button>
+          <ion-segment-button value="informacoes">
+            Informações
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      <div [ngSwitch]="tabsRestaurante">
+        <ion-list *ngSwitchCase="'cardapio'">
+          <ion-item>
+            <h2>Frango e batata</h2>
+            <h2>Arroz e feijão</h2>
+          </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'informacoes'">
+          <ion-item>
+            <h2>O restaurante {{titulo}} se encontra próximo a.. </h2>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
