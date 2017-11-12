@@ -8,12 +8,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RestaurantePage {
   restaurante: string;
-  titulo: string;
   tabsRestaurante: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams) {
     this.restaurante = this.navParams.get('restaurante');
-    this.titulo = this.restaurante;
     this.tabsRestaurante = 'cardapio';
   }
 
